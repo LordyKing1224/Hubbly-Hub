@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubbly Hub - About Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Hubbly Hub</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="booking.html">Booking</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>About Us</h2>
+        <div class="about-section clearfix">
+            <img src="pic1.jpg" alt="Image 1">
+            <p>Hubbly Hub started with the vision of creating a perfect hookah lounge experience.</p>
+        </div>
+        <div class="about-section clearfix">
+            <img src="pic2.jpg" alt="Image 2">
+            <p>Our locations are strategically placed to provide convenience and a great experience.</p>
+        </div>
+        <div class="about-section clearfix">
+            <img src="pic3.jpg" alt="Image 3">
+            <p>We continually strive to improve and innovate, ensuring our patrons have the best possible time.</p>
+        </div>
+        <div id="map" style="width:100%;height:400px;"></div>
+        <div class="table-container">
+            <h3>Working Hours</h3>
+            <table>
+                <tr>
+                    <th>Day</th>
+                    <th>Hours</th>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>17:00 PM - 02:00 AM</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>17:00 PM - 02:00 AM</td>
+
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td>13:00 PM - 02:00 AM</td>
+                </tr>
+                <tr>
+                    <td>Sunday</td>
+                    <td>13:00 PM - 02:00 AM</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Hubbly Hub</p>
+    </footer>
+    <script>
+        function initMap() {
+            var locations = [
+                { lat: -25.7478676, lng: 28.2292712 },
+                { lat: -25.746111, lng: 28.188056 },
+                { lat: -25.748889, lng: 28.214722 }
+            ];
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10,
+                center: locations[0]
+            });
+            locations.forEach(function(location) {
+                new google.maps.Marker({
+                    position: location,
+                    map: map
+                });
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</body>
+</html>
